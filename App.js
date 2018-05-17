@@ -1,26 +1,69 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Container } from './styles/grid'
-import { Stack Navigator, } from 'react-navigation'; // used to navigate between screens
-import Login from './screens/Login/login'
+import { Button, View, Text } from 'react-native';
+import { TabNavigator } from 'react-navigation';
+import Home from './screens/Home'
+import Search from './screens/Search'
+import Profile from './screens/Profile'
 
-// export default class App extends React.Component {
+var MainScreenNavigator = TabNavigator({
+  Home: {screen: Home},
+  Search: {screen: Search},
+  Profile: {screen: Profile}
+}, {
+  tabBarPosition: 'bottom',
+  swipeEnabled: true,
+  tabBarOptions: {
+    // activeTintColor: 'white',
+    activeBackgroundColor: 'white',
+    labelStyle: {
+      fontSize: 14,
+      padding: 15
+    }
+  }
+
+}
+);
+
+export default MainScreenNavigator;
+
+
+// class HomeScreen extends React.Component {
 //   render() {
 //     return (
-//       <Container>
-//         <Text>Open up App.js to start working on your app!</Text>
-//         <Text>Changes you make will automatically reload.</Text>
-//         <Text>Shake your phone to open the developer menu.</Text>
-//       </Container>
+//       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//         <Text>Home Screen</Text>
+//         <Button
+//           title="Go to Details"
+//           onPress={() => this.props.navigation.navigate('Details')}
+//         />
+//         <Text></Text>
+//       </View>
 //     );
 //   }
 // }
 
-export default StackNavigator({
-  Login: {
-    screen: 
-    navigationOptions: {
-      title: 'Login'
-    }
-  }
-});
+// class DetailsScreen extends React.Component {
+//   render() {
+//     return (
+//       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//         <Text>Details Screen</Text>
+//       </View>
+//     );
+//   }
+// }
+
+// const RootStack = createStackNavigator(
+//   {
+//     Home: HomeScreen,
+//     Details: DetailsScreen,
+//   },
+//   {
+//     initialRouteName: 'Home',
+//   }
+// );
+
+// export default class App extends React.Component {
+//   render() {
+//     return <RootStack />;
+//   }
+// }
