@@ -1,10 +1,10 @@
-Perform these steps: 
-npm install -g create-react-native-app
-create-react-native-app BloggingApp
-cd BloggingApp
-npm install --save styled-components
-npm install --save react-navigation
-npm start
+Run these commands on the command-line: 
+* npm install -g create-react-native-app
+* create-react-native-app BloggingApp
+* cd BloggingApp
+* npm install --save styled-components
+* npm install --save react-navigation
+* npm start
 
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
